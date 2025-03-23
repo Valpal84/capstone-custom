@@ -1,0 +1,55 @@
+# Exclude the virtual environment from version control, tells git to ignore the files
+.venv/
+venv/
+env/
+
+
+# ===========================================================
+# Python artifacts
+# ===========================================================
+
+# Compiled python files.
+__pycache__/
+*.pyc
+*.pyo
+
+# Packaging artifacts.
+*.egg-info/
+dist/
+build/
+
+# ============================================================
+# Editor - Visual Studio Code
+# ============================================================
+# Visual Studio Code adds settings and cache directories 
+# that are generally kept out of the repository.
+.vscode/*
+.history/
+
+# ============================================================
+# macOS System Files
+# ============================================================
+# macOS adds various hidden files to directories. 
+# These are typically excluded from the repository.
+.DS_Store
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# ============================================================
+# Backup & Temporary Files
+# ============================================================
+# These may be added by text editors and some tools. 
+# These are typically excluded from the repository.
+*~
+*.bak
+*.swp
+*.swo
+
+# ============================================================
+# End of .gitignore
+# ============================================================
