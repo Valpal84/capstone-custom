@@ -56,4 +56,18 @@ print(f'R²: {r2:.2f}')
 coefficients = pd.DataFrame(model.coef_, X.columns, columns=['Coefficient'])
 print("\nFeature Importance:\n", coefficients)
 
-print(data.columns)
+import matplotlib.pyplot as plt
+
+plt.scatter(y_test, y_pred)
+plt.xlabel('Actual')
+plt.ylabel('Predicted')
+plt.title('Actual vs Predicted')
+plt.show()
+
+residuals = y_test - y_pred
+plt.scatter(y_pred, residuals)
+plt.axhline(y=0, color='r', linestyle='--')
+plt.xlabel('Predicted')
+plt.ylabel('Residuals')
+plt.title('Residual Plot')
+plt.show()
