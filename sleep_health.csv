@@ -1,4 +1,4 @@
-Person ID,Gender,Age,Sleep_duration,sleep_quality,Blood_pressure,Heart_rate,Sleep_disorder
+Person ID,gender,age,sleep_duration,sleep_quality,blood_pressure,heart_rate,sleep_disorder
 1,Male,29,7.4,7,124/70,91,None
 2,Female,43,4.2,4.9,131/86,81,None
 3,Male,44,6.1,6,122/70,81,None
