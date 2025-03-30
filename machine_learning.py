@@ -13,24 +13,24 @@ data.columns = data.columns.str.lower().str.replace(' ', '_')
 
 # Convert Categorical Variables to Numerical (Label Encoding)
 data['gender'] = data['gender'].map({'Male': 0, 'Female': 1})
-data['Sleep_disorder'] = data['Sleep_disorder'].map({'None': 0, 'Insomnia': 1, 'Sleep Apnea': 2})
+data['sleep_disorder'] = data['sleep_disorder'].map({'None': 0, 'Insomnia': 1, 'Sleep Apnea': 2})
 
 # Handle Missing Values (Fill NaN in Sleep Disorder)
-data['Sleep_disorder'] = data['Sleep_disorder'].fillna(0)  # Assuming "None" if missing
+data['sleep_disorder'] = data['sleep_disorder'].fillna(0)  # Assuming "None" if missing
 
 # Convert Blood Pressure from String ("120/80") to Numerical (Systolic Only)
-data['Blood_pressure'] = data['Blood_pressure'].str.split('/').str[0].astype(float)
+data['blood_pressure'] = data['blood_pressure'].str.split('/').str[0].astype(float)
 
 # Create a Numerical "Overall Health Risk" Score (Based on Sleep & Heart Metrics)
 data['overall_health_risk'] = (
     (10 - data['sleep_quality']) +  # Lower quality → higher risk
-    (7 - data['Sleep_duration']) +  # Very low/high sleep → higher risk
-    (data['Heart_rate'] / 10) +     # High heart rate → higher risk
-    (data['Blood_pressure'] / 10)   # High systolic BP → higher risk
+    (7 - data['sleep_duration']) +  # Very low/high sleep → higher risk
+    (data['heart_rate'] / 10) +     # High heart rate → higher risk
+    (data['blood_pressure'] / 10)   # High systolic BP → higher risk
 )
 
 # Define Features (X) and Target (y)
-X = data[['Sleep_duration', 'sleep_quality', 'Sleep_disorder', 'Age', 'gender', 'Heart_rate', 'Blood_pressure']]
+X = data[['sleep_duration', 'sleep_quality', 'sleep_disorder', 'age', 'gender', 'heart_rate', 'blood_pressure']]
 y = data['overall_health_risk']
 
 # Split Data (80% Training, 20% Testing)
