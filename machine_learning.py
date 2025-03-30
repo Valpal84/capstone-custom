@@ -3,18 +3,11 @@ file_path = 'sleep_health.csv'
 data = pd.read_csv(file_path)
 print(data.head())
 
-
-# Example DataFrame
-data = pd.DataFrame({
-    'gender': ['Male', 'Female', 'Female', 'Male'],
-    'sleep_disorder': ['None', 'Insomnia', 'Sleep Apnea', 'None']
-})
-
 # Label encode gender
-data['gender'] = data['gender'].map({'Male': 0, 'Female': 1})
+data['Gender'] = data['Gender'].map({'Male': 0, 'Female': 1})
 
 # Label encode sleep disorder
-data['sleep_disorder'] = data['sleep_disorder'].map({'None': 0, 'Insomnia': 1, 'Sleep Apnea': 2})
+data['Sleep_disorder'] = data['Sleep_disorder'].map({'None': 0, 'Insomnia': 1, 'Sleep Apnea': 2})
 
 print(data)
 
@@ -22,7 +15,7 @@ print(data)
 from sklearn.model_selection import train_test_split
 
 # Define independent (X) and dependent (y) variables
-X = data[['sleep_duration', 'sleep_quality', 'sleep_disorder', 'Age', 'gender', 'heart_rate', 'blood_pressure']]
+X = data[['Sleep_duration', 'sleep_quality', 'Sleep_disorder', 'Age', 'Gender', 'Heart_rate', 'Blood_pressure']]
 y = data['overall_health_risk']  
 
 # Split into training and test sets (80% train, 20% test)
@@ -49,3 +42,4 @@ print(f'MAE: {mae:.2f}')
 print(f'R²: {r2:.2f}')
 
 
+print(data.columns)
