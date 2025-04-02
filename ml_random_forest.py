@@ -45,15 +45,6 @@ model.fit(X_train, y_train)
 # Predictions
 y_pred = model.predict(X_test)
 
-# Model Evaluation
-mse = mean_squared_error(y_test, y_pred)
-mae = mean_absolute_error(y_test, y_pred)
-r2 = r2_score(y_test, y_pred)
-
-print(f'MSE: {mse:.2f}')
-print(f'MAE: {mae:.2f}')
-print(f'R²: {r2:.2f}')
-
 # Classification Report
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
