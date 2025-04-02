@@ -58,16 +58,9 @@ print("\nFeature Importance:\n", coefficients)
 
 import matplotlib.pyplot as plt
 
-plt.scatter(y_test, y_pred)
-plt.xlabel('Actual')
-plt.ylabel('Predicted')
-plt.title('Actual vs Predicted')
-plt.show()
+print("Shape of y_test:", y_test.shape)
+print("Shape of y_pred:", y_pred.shape)
 
-residuals = y_test - y_pred
-plt.scatter(y_pred, residuals)
-plt.axhline(y=0, color='r', linestyle='--')
-plt.xlabel('Predicted')
-plt.ylabel('Residuals')
-plt.title('Residual Plot')
-plt.show()
+# Check if there are any NaN or infinite values in y_pred
+print("Are there any NaN or infinite values in y_pred?", np.any(np.isnan(y_pred)), np.any(np.isinf(y_pred)))
+
