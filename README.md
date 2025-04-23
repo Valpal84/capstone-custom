@@ -32,4 +32,8 @@ Github repository: https://github.com/Valpal84/capstone-custom
  ## Step 6: Random Forest Classifier
  - Open the file ml_random_forest.py and run it, this is the final machine learning program created in order to train and test the dataset to determine whether or not an individual would have increased risk of overall health issues based on some of their current medical statistics and sleep issues. This model performed well with 95% accuracy. It correctly predicted a high number of "high risk" individuals based on information provided. 
 
+Here are some charts from running the random forest code
+
  ![alt text](image.png)
+
+ ![alt text](image-1.png)
